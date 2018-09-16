@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ProductsComponent } from './containers/products/products.component';
+
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
 
@@ -9,8 +11,8 @@ import { reducers } from './store';
     CommonModule,
     StoreModule.forFeature('products', reducers),
   ],
-  declarations: [],
+  declarations: [ProductsComponent],
   providers: [],
-  exports: [],
+  exports: [ProductsComponent],
 })
 export class ProductModule { }

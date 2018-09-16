@@ -13,10 +13,10 @@ export const initialState = {
   loading: false,
 };
 
-export const reducer = (
+export function reducer(
   state = initialState,
   action: fromPizzas.PizzasAction
-): PizzaState => {
+): PizzaState {
 
   switch (action.type) {
     case fromPizzas.LOAD_PIZZAS: {
@@ -45,4 +45,8 @@ export const reducer = (
   }
 
   return state;
-};
+}
+
+export const getPizzasLoading = (state: PizzaState) => state.loading;
+export const getPizzasLoaded = (state: PizzaState) => state.loaded;
+export const getPizzas = (state: PizzaState) => state.data;
